@@ -1,0 +1,16 @@
+{
+  "name": "live-weather",
+  "version": "1.0.0",
+  "description": "An app that capture real-time weather data from openweathermap api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "weather",
+    "api",
+    "real-time"
+  ],
+  "author": "Francis Steven",
+  "license": "ISC"
+}
