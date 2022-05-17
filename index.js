@@ -1,19 +1,30 @@
 const express = require("express");
 const https = require("https");
+const bodyParser = require("body-parser");
 
 app = express();
 
-const city_name = "Pamplemousses";
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
-  res.send("Hello world");
+  res.sendFile(__dirname + "/index.html");
 });
 
 app.get("/weather", function (req, res) {
+  res.sendFile(__dirname + "/index.html");
+});
+
+app.post("/", (req, res) => {
+  const city_name = req.body.city;
+  const apiKey = "4dd96710b9d014dbaea77b49cbc7812a";
+  const unit = "metric";
   const url =
     "https://api.openweathermap.org/data/2.5/weather?q=" +
     city_name +
-    "&appid=4dd96710b9d014dbaea77b49cbc7812a";
+    "&appid=" +
+    apiKey +
+    "&units=" +
+    unit;
   https.get(url, function (response) {
     console.log(response);
 
